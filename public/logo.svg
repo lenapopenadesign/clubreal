@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 36" fill="none">
+  <!-- Bar pattern -->
+  <rect x="0" y="4" width="3" height="28" rx="1" fill="#C41E3A"/>
+  <rect x="5" y="4" width="3" height="28" rx="1" fill="#C41E3A"/>
+  <rect x="10" y="4" width="3" height="28" rx="1" fill="#C41E3A"/>
+  <rect x="15" y="4" width="3" height="28" rx="1" fill="#C41E3A"/>
+  <rect x="20" y="4" width="3" height="28" rx="1" fill="#C41E3A"/>
+  <rect x="25" y="4" width="3" height="28" rx="1" fill="#C41E3A"/>
+  <rect x="30" y="4" width="3" height="28" rx="1" fill="#C41E3A"/>
+  <rect x="35" y="4" width="3" height="28" rx="1" fill="#C41E3A"/>
+  <!-- Text -->
+  <text x="44" y="16" font-family="serif" font-size="11" font-weight="600" fill="#2D2D2D">Club</text>
+  <text x="44" y="30" font-family="serif" font-size="11" font-weight="600" fill="#2D2D2D">Real</text>
+</svg>
