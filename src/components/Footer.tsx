@@ -53,7 +53,7 @@ export default function Footer() {
               Kontakt
             </h4>
             <Link href="/kontakt" className="text-sm text-muted hover:text-foreground">
-              info@clubreal.at
+              willkommen@clubreal.at
             </Link>
             <span className="text-sm text-muted">Wien, Österreich</span>
           </div>

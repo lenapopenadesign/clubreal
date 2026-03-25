@@ -34,8 +34,10 @@ export default function KontaktPage() {
         </h1>
         <p className="text-lg text-muted leading-relaxed max-w-[700px]">
           Sie sind Immobilien-Sachverständige oder Immobilien-Sachverständiger
-          in Österreich und möchten Teil eines starken Netzwerks werden?
-          Füllen Sie das Formular aus – wir melden uns persönlich bei Ihnen.
+          in Österreich und möchten Teil eines starken Netzwerks werden? Gerne
+          lernen wir Sie in einem unverbindlichen Erstgespräch persönlich
+          kennen und geben Ihnen Einblick in den Club Real. Füllen Sie einfach
+          das Formular aus – wir melden uns bei Ihnen.
         </p>
       </section>
 
@@ -92,6 +94,23 @@ export default function KontaktPage() {
                     required
                     className="px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
                     placeholder="ihre@email.at"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label
+                    htmlFor="phone"
+                    className="text-sm font-medium text-foreground"
+                  >
+                    Telefonnummer
+                    <span className="text-muted font-normal"> (optional)</span>
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    className="px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+                    placeholder="+43 ..."
                   />
                 </div>
 

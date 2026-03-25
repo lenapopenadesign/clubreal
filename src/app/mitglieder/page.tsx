@@ -1,4 +1,4 @@
-import { ExternalLink, Scale, Linkedin } from "lucide-react";
+import { ExternalLink, Scale, Linkedin, MapPin, Briefcase } from "lucide-react";
 
 interface MemberLink {
   icon: typeof ExternalLink;
@@ -8,6 +8,7 @@ interface MemberLink {
 interface Member {
   name: string;
   role: string;
+  location: string;
   specialization: string;
   links: MemberLink[];
 }
@@ -16,6 +17,7 @@ const members: Member[] = [
   {
     name: "Dr. Walter-Wolfgang Reichling",
     role: "Vereinsobmann",
+    location: "Wien",
     specialization: "Wohnimmobilien, Zinshäuser, Gewerbeobjekte",
     links: [
       { icon: ExternalLink, label: "Website" },
@@ -25,12 +27,14 @@ const members: Member[] = [
   {
     name: "Mag. Elisabeth Kramer",
     role: "Ordentliches Mitglied",
+    location: "Niederösterreich",
     specialization: "Hausverwaltung, Mietrecht, Betriebskosten",
     links: [{ icon: Scale, label: "Justiz-Liste" }],
   },
   {
     name: "Mag. Stefan Weber, MBA",
     role: "Ordentliches Mitglied",
+    location: "Oberösterreich",
     specialization: "Projektentwicklung, Bauträger, Investmentimmobilien",
     links: [
       { icon: ExternalLink, label: "Website" },
@@ -40,6 +44,7 @@ const members: Member[] = [
   {
     name: "DI Matthias Grosse, MA",
     role: "Ordentliches Mitglied",
+    location: "Wien",
     specialization: "Immobiliendaten, Marktanalysen, Bewertungsmodelle",
     links: [
       { icon: ExternalLink, label: "Website" },
@@ -50,6 +55,7 @@ const members: Member[] = [
   {
     name: "Ing. Thomas Hofer",
     role: "Ordentliches Mitglied",
+    location: "Steiermark",
     specialization: "Gebäudetechnik, Industrieimmobilien, Sanierung",
     links: [
       { icon: ExternalLink, label: "Website" },
@@ -59,6 +65,7 @@ const members: Member[] = [
   {
     name: "DI Anna Berger",
     role: "Ordentliches Mitglied",
+    location: "Kärnten",
     specialization: "Land- und Forstwirtschaft, Grundstücksbewertung",
     links: [{ icon: Scale, label: "Justiz-Liste" }],
   },
@@ -66,25 +73,20 @@ const members: Member[] = [
 
 function MemberCard({ member }: { member: Member }) {
   return (
-    <div className="flex flex-col gap-4 p-6 rounded-2xl bg-background border border-border">
-      {/* Name & Role */}
-      <div className="flex flex-col gap-1">
-        <h3 className="text-base font-medium">{member.name}</h3>
-        <p className="text-[13px] text-muted font-medium">{member.role}</p>
-      </div>
-
-      {/* Specialization */}
-      <div className="flex flex-col gap-3">
-        <span className="text-[11px] font-medium font-[family-name:var(--font-heading)] text-muted">
-          Spezialisierung
-        </span>
-        <p className="text-sm text-foreground leading-normal">
-          {member.specialization}
-        </p>
-      </div>
+    <div className="flex flex-col gap-3 p-6 rounded-2xl bg-background border border-border">
+      <h3 className="text-base font-medium">{member.name}</h3>
+      <p className="text-[13px] text-muted font-medium">{member.role}</p>
+      <p className="text-[13px] text-muted flex items-center gap-1">
+        <MapPin className="w-3 h-3" />
+        {member.location}
+      </p>
+      <p className="text-[13px] text-muted flex items-center gap-1">
+        <Briefcase className="w-3 h-3 shrink-0" />
+        {member.specialization}
+      </p>
 
       {/* Links */}
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-3 mt-2">
         {member.links.map((link) => {
           const Icon = link.icon;
           return (
@@ -118,8 +120,8 @@ export default function MitgliederPage() {
           Ein Netzwerk ist nur so stark wie seine Mitglieder.
         </p>
         <p className="text-base text-muted leading-relaxed max-w-[700px]">
-          Hier finden Sie die Mitglieder des Club Real
-          Immobiliensachverständige inklusive ihrer fachlichen Schwerpunkte und
+          Hier finden Sie Mitglieder des Club Real
+          Immobiliensachverständige, ihre fachlichen Schwerpunkte und
           Kontaktmöglichkeiten.
         </p>
       </section>

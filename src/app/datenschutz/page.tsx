@@ -20,9 +20,12 @@ export default function DatenschutzPage() {
               Verantwortlicher
             </h2>
             <div className="text-base text-muted leading-relaxed">
-              <p>Club Real Immobiliensachverständige</p>
-              <p>Wien, Österreich</p>
-              <p>E-Mail: info@clubreal.at</p>
+              <p>CLUB REAL Immobiliensachverständige</p>
+              <p>ZVR-Zahl: 469893173</p>
+              <p>Immobilienverwaltung Mag. Christian Krenauer GmbH</p>
+              <p>Mariahilfer Straße 57-59/14</p>
+              <p>1060 Wien, Österreich</p>
+              <p>E-Mail: willkommen@clubreal.at</p>
             </div>
           </article>
 
@@ -110,7 +113,7 @@ export default function DatenschutzPage() {
             </h2>
             <p className="text-base text-muted leading-relaxed">
               Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte
-              wenden Sie sich bitte an: info@clubreal.at
+              wenden Sie sich bitte an: willkommen@clubreal.at
             </p>
           </article>
         </div>

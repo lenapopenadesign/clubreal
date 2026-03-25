@@ -19,18 +19,20 @@ export default function ImpressumPage() {
               Verein
             </h2>
             <div className="text-base text-muted leading-relaxed">
-              <p>Club Real Immobiliensachverständige</p>
-              <p>ZVR-Zahl: [wird ergänzt]</p>
+              <p>CLUB REAL Immobiliensachverständige</p>
+              <p>ZVR-Zahl: 469893173</p>
             </div>
           </article>
 
           <article className="flex flex-col gap-4">
             <h2 className="text-xl font-semibold font-[family-name:var(--font-heading)] text-foreground">
-              Sitz des Vereins
+              Vereinssitz
             </h2>
-            <p className="text-base text-muted leading-relaxed">
-              Wien, Österreich
-            </p>
+            <div className="text-base text-muted leading-relaxed">
+              <p>Immobilienverwaltung Mag. Christian Krenauer GmbH</p>
+              <p>Mariahilfer Straße 57-59/14</p>
+              <p>1060 Wien, Österreich</p>
+            </div>
           </article>
 
           <article className="flex flex-col gap-4">
@@ -47,7 +49,7 @@ export default function ImpressumPage() {
               Kontakt
             </h2>
             <div className="text-base text-muted leading-relaxed">
-              <p>E-Mail: info@clubreal.at</p>
+              <p>E-Mail: willkommen@clubreal.at</p>
             </div>
           </article>
 

@@ -40,15 +40,10 @@ export default function HomePage() {
       <section
         className="relative flex flex-col items-center justify-center gap-8 px-6 md:px-[120px] py-16 md:py-[100px] bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1726938985246-cf240a38a6d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080')`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/background_landingpage.png')`,
         }}
       >
-        <div className="inline-flex px-4 py-1.5 border border-white/20 bg-white/10">
-          <span className="text-xs font-medium font-[family-name:var(--font-heading)] text-white/80 tracking-wider">
-            Netzwerk Immobilien-Sachverständiger
-          </span>
-        </div>
-        <h1 className="text-3xl md:text-[52px] font-semibold font-[family-name:var(--font-heading)] text-white text-center leading-tight tracking-tight max-w-[900px]">
+<h1 className="text-3xl md:text-[52px] font-semibold font-[family-name:var(--font-heading)] text-white text-center leading-tight tracking-tight max-w-[900px]">
           Willkommen beim Club Real
         </h1>
         <p className="text-lg text-white/75 text-center leading-relaxed max-w-[700px] font-[family-name:var(--font-body)]">
@@ -103,7 +98,7 @@ export default function HomePage() {
         <div
           className="w-full md:w-1/2 h-[250px] md:h-[400px] bg-cover bg-center"
           style={{
-            backgroundImage: `url('/mission.jpg')`,
+            backgroundImage: `url('/team_clubreal.jpg')`,
           }}
         />
         <div className="w-full md:w-1/2 flex flex-col gap-6">
