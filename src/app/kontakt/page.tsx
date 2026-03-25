@@ -24,6 +24,13 @@ const specializations = [
 
 export default function KontaktPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [selected, setSelected] = useState<string[]>([]);
+
+  const toggleSpec = (s: string) => {
+    setSelected((prev) =>
+      prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]
+    );
+  };
 
   return (
     <>
@@ -114,29 +121,32 @@ export default function KontaktPage() {
                   />
                 </div>
 
-                <div className="flex flex-col gap-2">
-                  <label
-                    htmlFor="specialization"
-                    className="text-sm font-medium text-foreground"
-                  >
-                    Spezialisierung
+                <div className="flex flex-col gap-3">
+                  <span className="text-sm font-medium text-foreground">
+                    Spezialisierungen
                     <span className="text-muted font-normal"> (optional)</span>
-                  </label>
-                  <select
-                    id="specialization"
-                    name="specialization"
-                    className="px-4 py-3 pr-10 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M6%208L1%203h10z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px] bg-[right_16px_center] bg-no-repeat"
-                    defaultValue=""
-                  >
-                    <option value="" disabled>
-                      Bitte wählen
-                    </option>
+                  </span>
+                  <div className="flex flex-wrap gap-2">
                     {specializations.map((s) => (
-                      <option key={s} value={s}>
+                      <button
+                        key={s}
+                        type="button"
+                        onClick={() => toggleSpec(s)}
+                        className={`inline-flex items-center rounded-full px-3 py-1.5 text-xs transition-colors ${
+                          selected.includes(s)
+                            ? "bg-primary text-white"
+                            : "bg-secondary text-foreground hover:bg-secondary/80"
+                        }`}
+                      >
                         {s}
-                      </option>
+                      </button>
                     ))}
-                  </select>
+                  </div>
+                  <input
+                    type="hidden"
+                    name="specializations"
+                    value={selected.join(", ")}
+                  />
                 </div>
 
                 <div className="flex flex-col gap-2">
