@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "Warum Club Real?", href: "/warum-club-real" },
+  { label: "Unser Angebot", href: "/warum-club-real" },
   { label: "Mitglieder", href: "/mitglieder" },
   { label: "CRSV", href: "/crsv" },
 ];

@@ -29,7 +29,7 @@ export default function ImpressumPage() {
               Vereinssitz
             </h2>
             <div className="text-base text-muted leading-relaxed">
-              <p>Immobilienverwaltung Mag. Christian Krenauer GmbH</p>
+              <p>c/o Immobilienverwaltung Mag. Christian Krenauer GmbH</p>
               <p>Mariahilfer Straße 57-59/14</p>
               <p>1060 Wien, Österreich</p>
             </div>

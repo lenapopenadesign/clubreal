@@ -22,7 +22,7 @@ export default function DatenschutzPage() {
             <div className="text-base text-muted leading-relaxed">
               <p>CLUB REAL Immobiliensachverständige</p>
               <p>ZVR-Zahl: 469893173</p>
-              <p>Immobilienverwaltung Mag. Christian Krenauer GmbH</p>
+              <p>c/o Immobilienverwaltung Mag. Christian Krenauer GmbH</p>
               <p>Mariahilfer Straße 57-59/14</p>
               <p>1060 Wien, Österreich</p>
               <p>E-Mail: willkommen@clubreal.at</p>

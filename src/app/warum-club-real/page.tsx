@@ -12,7 +12,7 @@ const benefits = [
     icon: Users,
     title: "Netzwerk",
     description:
-      "Zugang zu einem exklusiven Kreis von rund 35 qualifizierten Immobilien-Sachverständigen in ganz Österreich.",
+      "Zugang zu einem exklusiven Kreis von qualifizierten Immobilien-Sachverständigen in ganz Österreich.",
   },
   {
     icon: MessageSquare,
@@ -52,7 +52,7 @@ export default function WarumClubReal() {
       >
         <div className="inline-flex px-4 py-1.5 border border-white/20 bg-white/10">
           <span className="text-xs font-medium font-[family-name:var(--font-heading)] text-white/80 tracking-wider">
-            Warum Club Real?
+            Unser Angebot
           </span>
         </div>
         <h1 className="text-3xl md:text-[52px] font-semibold font-[family-name:var(--font-heading)] text-white text-center tracking-tight">
@@ -111,6 +111,7 @@ export default function WarumClubReal() {
             ))}
           </div>
         </div>
+
       </section>
 
       {/* CTA */}
@@ -128,12 +129,12 @@ export default function WarumClubReal() {
           Begeisterung verbindet. Der Club Real wird von Menschen getragen, die
           professionelle Integrität leben und kollegialen Austausch schätzen.
         </p>
-        <Link
-          href="/kontakt"
+        <a
+          href="mailto:willkommen@clubreal.at"
           className="inline-flex items-center justify-center gap-1.5 rounded-full bg-primary text-white px-6 py-3 h-12 text-sm font-medium font-[family-name:var(--font-heading)]"
         >
           Jetzt Kontakt aufnehmen
-        </Link>
+        </a>
       </section>
     </>
   );

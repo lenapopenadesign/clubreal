@@ -25,7 +25,7 @@ export default function Footer() {
               Navigation
             </h4>
             <Link href="/warum-club-real" className="text-sm text-muted hover:text-foreground">
-              Warum Club Real?
+              Unser Angebot
             </Link>
             <Link href="/mitglieder" className="text-sm text-muted hover:text-foreground">
               Mitglieder
@@ -52,9 +52,9 @@ export default function Footer() {
             <h4 className="text-xs font-semibold font-[family-name:var(--font-heading)] tracking-wider text-foreground">
               Kontakt
             </h4>
-            <Link href="/kontakt" className="text-sm text-muted hover:text-foreground">
+            <a href="mailto:willkommen@clubreal.at" className="text-sm text-muted hover:text-foreground">
               willkommen@clubreal.at
-            </Link>
+            </a>
             <span className="text-sm text-muted">Wien, Österreich</span>
           </div>
         </div>

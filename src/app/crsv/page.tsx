@@ -11,7 +11,7 @@ const values = [
     icon: TrendingUp,
     title: "Engagement",
     description:
-      "Engagement für fachliche und persönliche Weiterentwicklung im Sachverständigenwesen.",
+      "Engagement für fachliche und persönliche Weiterentwicklung als Sachverständiger.",
   },
   {
     icon: ShieldCheck,

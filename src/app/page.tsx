@@ -1,35 +1,35 @@
 import {
   Building2,
   HardHat,
-  Settings,
+  ClipboardList,
   House,
 } from "lucide-react";
 import Link from "next/link";
 
 const features = [
   {
+    icon: ClipboardList,
+    title: "Bewertung",
+    description:
+      "Unabhängige und fachlich fundierte Wertermittlung mit Blick für Markt, Substanz und Nutzung.",
+  },
+  {
     icon: Building2,
     title: "Maklerei",
     description:
-      "Fundierte Marktkenntnis und Bewertungskompetenz aus der täglichen Praxis.",
-  },
-  {
-    icon: HardHat,
-    title: "Projektentwicklung",
-    description:
-      "Von der Planung bis zur Umsetzung – strategische Projektbegleitung mit Weitblick.",
-  },
-  {
-    icon: Settings,
-    title: "Gebäudetechnik",
-    description:
-      "Technisches Know-how für präzise Bewertungen und nachhaltige Gebäudeanalysen.",
+      "Umfassende Marktkenntnis und Bewertungskompetenz aus der täglichen Praxis.",
   },
   {
     icon: House,
     title: "Hausverwaltung",
     description:
       "Praxisnahe Expertise in Verwaltung, Instandhaltung und Werterhaltung von Immobilien.",
+  },
+  {
+    icon: HardHat,
+    title: "Projektentwicklung",
+    description:
+      "Von der Planung bis zur Umsetzung – strategische Projektbegleitung mit Weitblick.",
   },
 ];
 
@@ -69,9 +69,9 @@ export default function HomePage() {
             Fachlich fundiert. Menschlich verbindend.
           </h2>
           <p className="text-base text-muted text-center leading-relaxed max-w-[670px]">
-            Als Zusammenschluss von aktuell etwa 35 Expertinnen und Experten im
-            Immobilienwesen stehen wir für Fachkompetenz, Erfahrung und
-            kollegialen Austausch.
+            Als Zusammenschluss von Expertinnen und Experten aus
+            unterschiedlichen Bereichen des Immobilienwesens stehen wir für
+            Fachkompetenz, Erfahrung und kollegialen Austausch.
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export default function HomePage() {
         <div
           className="w-full md:w-1/2 h-[250px] md:h-[400px] bg-cover bg-center"
           style={{
-            backgroundImage: `url('/team_clubreal.jpg')`,
+            backgroundImage: `url('/Team.png')`,
           }}
         />
         <div className="w-full md:w-1/2 flex flex-col gap-6">
