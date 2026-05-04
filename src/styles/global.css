@@ -14,15 +14,7 @@
   --color-dark-foreground: #FFFFFF;
 
   --font-heading: "Playfair Display", serif;
-  --font-body: "Source Sans Pro", sans-serif;
-}
-
-@font-face {
-  font-family: "Playfair Display";
-  font-style: normal;
-  font-weight: 400 900;
-  font-display: swap;
-  src: url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+  --font-body: "Source Sans 3", sans-serif;
 }
 
 body {

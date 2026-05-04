@@ -1,0 +1,39 @@
+---
+import Header from '../components/Header.tsx';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Club Real – Netzwerk Immobilien-Sachverständiger',
+  description = 'Dem Netzwerk engagierter Immobilien-Sachverständiger in Österreich. Rund 35 Expertinnen und Experten – vereint durch höchste fachliche Ansprüche.',
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="antialiased">
+    <Header currentPath={currentPath} client:load />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

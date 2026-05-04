@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Users, MessageSquare, TrendingUp, Calendar, Heart } from 'lucide-react';
+
+const benefits = [
+  {
+    Icon: Users,
+    title: "Netzwerk",
+    description: "Zugang zu einem exklusiven Kreis von qualifizierten Immobilien-Sachverständigen in ganz Österreich.",
+  },
+  {
+    Icon: MessageSquare,
+    title: "Plattform",
+    description: "Eine Plattform für fachlichen Austausch, Diskussion und die gemeinsame Weiterentwicklung von Bewertungsstandards.",
+  },
+  {
+    Icon: TrendingUp,
+    title: "Weiterentwicklung",
+    description: "Fachliche und persönliche Weiterbildung durch Vorträge, Workshops und den kollegialen Erfahrungsaustausch.",
+  },
+  {
+    Icon: Calendar,
+    title: "Veranstaltungen",
+    description: "Regelmäßige Events, Fachtagungen und gesellige Treffen stärken den Zusammenhalt und erweitern den Horizont.",
+  },
+  {
+    Icon: Heart,
+    title: "Gemeinschaft",
+    description: "Ein Verein, der nicht nur fachlich, sondern auch menschlich verbindet – mit echtem Zusammenhalt und gegenseitigem Respekt.",
+  },
+];
+---
+<Layout title="Unser Angebot – Club Real">
+  <!-- Hero -->
+  <section
+    class="flex flex-col items-center justify-center gap-8 px-6 md:px-[120px] py-16 md:py-20 bg-cover bg-center"
+    style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/flagged/photo-1556010856-6d1801f17ac8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080')"
+  >
+    <div class="inline-flex px-4 py-1.5 border border-white/20 bg-white/10">
+      <span class="text-xs font-medium font-[family-name:var(--font-heading)] text-white/80 tracking-wider">
+        Unser Angebot
+      </span>
+    </div>
+    <h1 class="text-3xl md:text-[52px] font-semibold font-[family-name:var(--font-heading)] text-white text-center tracking-tight">
+      Gemeinsam mehr erreichen
+    </h1>
+    <p class="text-lg text-white/75 text-center leading-relaxed max-w-[700px]">
+      Der Immobilienmarkt wird komplexer. Umso wichtiger ist ein starkes Netzwerk,
+      das Wissen teilt, Standards setzt und Kollegialität lebt.
+    </p>
+  </section>
+
+  <!-- Benefits -->
+  <section class="bg-card px-6 md:px-[120px] py-16 md:py-20">
+    <div class="flex flex-col items-center gap-3 mb-12">
+      <span class="text-xs font-medium font-[family-name:var(--font-heading)] text-primary tracking-widest">
+        Ihre Vorteile
+      </span>
+      <h2 class="text-4xl font-semibold font-[family-name:var(--font-heading)] text-foreground text-center tracking-tight">
+        Was Club Real Ihnen bietet
+      </h2>
+    </div>
+
+    <div class="flex flex-col gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-6 gap-5">
+        {benefits.slice(0, 3).map(({ Icon, title, description }) => (
+          <div class="flex flex-col gap-4 p-7 bg-white shadow-sm md:col-span-2">
+            <Icon className="w-6 h-6 text-primary" />
+            <h3 class="text-lg font-semibold font-[family-name:var(--font-heading)] text-foreground">{title}</h3>
+            <p class="text-sm text-muted leading-relaxed">{description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-6 gap-5">
+        {benefits.slice(3, 5).map(({ Icon, title, description }, i) => (
+          <div class={`flex flex-col gap-4 p-7 bg-white shadow-sm md:col-span-2 ${i === 0 ? 'md:col-start-2' : ''}`}>
+            <Icon className="w-6 h-6 text-primary" />
+            <h3 class="text-lg font-semibold font-[family-name:var(--font-heading)] text-foreground">{title}</h3>
+            <p class="text-sm text-muted leading-relaxed">{description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="flex flex-col items-center justify-center gap-8 bg-dark px-6 md:px-[120px] py-16 md:py-20">
+    <span class="text-xs font-medium font-[family-name:var(--font-heading)] text-primary tracking-widest">
+      Werden Sie Teil von Club Real
+    </span>
+    <h2 class="text-2xl md:text-[40px] font-semibold font-[family-name:var(--font-heading)] text-white text-center leading-snug tracking-tight max-w-[700px]">
+      Wissen teilen. Haltung zeigen.<br />Gemeinsam wachsen.
+    </h2>
+    <p class="text-base text-white/75 text-center leading-relaxed max-w-[550px]">
+      Wir sind Profis – und eine Gemeinschaft, die fachliche Exzellenz mit Begeisterung verbindet.
+      Der Club Real wird von Menschen getragen, die professionelle Integrität leben und
+      kollegialen Austausch schätzen.
+    </p>
+    <a
+      href="mailto:willkommen@clubreal.at"
+      class="inline-flex items-center justify-center gap-1.5 rounded-full bg-primary text-white px-6 py-3 h-12 text-sm font-medium font-[family-name:var(--font-heading)]"
+    >
+      Jetzt Kontakt aufnehmen
+    </a>
+  </section>
+</Layout>
