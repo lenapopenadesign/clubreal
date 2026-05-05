@@ -1,62 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { HeartHandshake, TrendingUp, ShieldCheck } from 'lucide-react';
+import { Building2, HardHat, ClipboardList, House, Users, MessageSquare, TrendingUp, Calendar, Heart, HeartHandshake, ShieldCheck } from 'lucide-react';
+import page from '../../content/pages/crsv.json';
 
-const values = [
-  {
-    Icon: HeartHandshake,
-    title: "Verbundenheit",
-    description: "Verbundenheit mit den Vereinszielen und der Gemeinschaft der Sachverständigen.",
-  },
-  {
-    Icon: TrendingUp,
-    title: "Engagement",
-    description: "Engagement für fachliche und persönliche Weiterentwicklung als Sachverständiger.",
-  },
-  {
-    Icon: ShieldCheck,
-    title: "Verantwortung",
-    description: "Verantwortung für hohe Qualitäts- und Ethikstandards in der Immobilienbewertung.",
-  },
-];
+const iconMap: Record<string, any> = {
+  clipboardList: ClipboardList, building2: Building2, house: House, hardHat: HardHat,
+  users: Users, messageSquare: MessageSquare, trendingUp: TrendingUp, calendar: Calendar,
+  heart: Heart, heartHandshake: HeartHandshake, shieldCheck: ShieldCheck,
+};
 ---
 <Layout
   title="CRSV – Club Real Sachverständiger | Zertifizierung für Immobilienbewertung"
   description="Die CRSV-Zertifizierung steht für Qualität und Verantwortung in der Immobilienbewertung. Nur Mitglieder des Club Real können den Titel CRSV erwerben."
 >
-  <!-- Hero -->
   <section class="bg-background px-6 md:px-20 py-20">
-    <h1 class="text-5xl font-semibold font-[family-name:var(--font-heading)] text-foreground tracking-tight leading-tight mb-6">
-      CRSV – Club Real<br />Sachverständiger
-    </h1>
-    <p class="text-xl text-muted leading-normal max-w-[700px]">
-      Die CRSV-Zertifizierung steht für Qualität, Verantwortung und Engagement.
-    </p>
+    <h1 class="text-5xl font-semibold font-[family-name:var(--font-heading)] text-foreground tracking-tight leading-tight mb-6 whitespace-pre-line">{page.heroHeading}</h1>
+    <p class="text-xl text-muted leading-normal max-w-[700px]">{page.heroSubtext}</p>
   </section>
 
-  <!-- Values -->
   <section class="bg-card px-6 md:px-20 py-[60px]">
-    <p class="text-lg text-foreground leading-relaxed max-w-[800px] mb-12">
-      Nur Mitglieder des Club Real können den Titel CRSV erwerben – eine Auszeichnung, die zeigt:
-    </p>
+    <p class="text-lg text-foreground leading-relaxed max-w-[800px] mb-12">{page.valuesIntro}</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {values.map(({ Icon, title, description }) => (
-        <div class="flex flex-col gap-4 p-8 rounded-2xl bg-white shadow-sm">
-          <Icon className="w-8 h-8 text-primary" />
-          <h3 class="text-lg font-medium font-[family-name:var(--font-heading)] text-foreground">{title}</h3>
-          <p class="text-sm text-muted leading-relaxed">{description}</p>
-        </div>
-      ))}
+      {page.values.map((value) => {
+        const Icon = iconMap[value.icon];
+        return (
+          <div class="flex flex-col gap-4 p-8 rounded-2xl bg-white shadow-sm">
+            {Icon && <Icon className="w-8 h-8 text-primary" />}
+            <h3 class="text-lg font-medium font-[family-name:var(--font-heading)] text-foreground">{value.title}</h3>
+            <p class="text-sm text-muted leading-relaxed">{value.description}</p>
+          </div>
+        );
+      })}
     </div>
   </section>
 
-  <!-- Legal -->
   <section class="bg-background px-6 md:px-20 py-[60px]">
-    <p class="text-base text-muted leading-relaxed max-w-[900px]">
-      Die Zertifizierung dokumentiert im Sinne des § 1299 ABGB das öffentliche Bekenntnis zu einem
-      Beruf und zu einem hohen Qualitätsbewusstsein. Sie setzt ein klares qualitatives
-      Selbstverständnis, die Bereitschaft zu kontinuierlicher fachlicher Weiterentwicklung sowie
-      ein gelebtes Miteinander im Verein voraus.
-    </p>
+    <p class="text-base text-muted leading-relaxed max-w-[900px]">{page.legalText}</p>
   </section>
 </Layout>

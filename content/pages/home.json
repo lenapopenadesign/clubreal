@@ -1,0 +1,18 @@
+{
+  "heroHeading": "Willkommen beim Club Real",
+  "heroSubtext": "Dem Netzwerk engagierter Immobilien-Sachverständiger in Österreich.\nRund 35 Expertinnen und Experten – vereint durch höchste fachliche Ansprüche.",
+  "heroCta": "Mehr erfahren",
+  "featuresLabel": "Unsere Stärke",
+  "featuresHeading": "Fachlich fundiert. Menschlich verbindend.",
+  "featuresSubtext": "Als Zusammenschluss von Expertinnen und Experten aus unterschiedlichen Bereichen des Immobilienwesens stehen wir für Fachkompetenz, Erfahrung und kollegialen Austausch.",
+  "features": [
+    { "icon": "clipboardList", "title": "Bewertung", "description": "Unabhängige und fachlich fundierte Wertermittlung mit Blick für Markt, Substanz und Nutzung." },
+    { "icon": "building2", "title": "Maklerei", "description": "Umfassende Marktkenntnis und Bewertungskompetenz aus der täglichen Praxis." },
+    { "icon": "house", "title": "Hausverwaltung", "description": "Praxisnahe Expertise in Verwaltung, Instandhaltung und Werterhaltung von Immobilien." },
+    { "icon": "hardHat", "title": "Projektentwicklung", "description": "Von der Planung bis zur Umsetzung – strategische Projektbegleitung mit Weitblick." }
+  ],
+  "missionLabel": "Unsere Mission",
+  "missionHeading": "Wir schaffen Raum für fachlichen wie persönlichen Austausch.",
+  "missionBody": "Wir pflegen hohe Qualitätsstandards und stärken die Gemeinschaft der Immobilien-Sachverständigen in Österreich. Durch regelmäßigen Austausch, gemeinsame Veranstaltungen und kollegiale Zusammenarbeit fördern wir Exzellenz in der Bewertungspraxis.",
+  "missionQuote": "Qualität entsteht im Dialog – nicht im Alleingang."
+}

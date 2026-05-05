@@ -3,17 +3,20 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "tinacms dev -c \"astro dev\"",
     "build": "astro build",
+    "build:cms": "tinacms build && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/react": "^4.0.0",
     "@astrojs/sitemap": "^3.7.2",
+    "@tinacms/cli": "^2.2.5",
     "astro": "^5.0.0",
     "lucide-react": "^0.577.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tinacms": "^3.7.5"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",

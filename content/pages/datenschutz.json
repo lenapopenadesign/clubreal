@@ -1,0 +1,14 @@
+{
+  "heroHeading": "Datenschutzerklärung",
+  "heroSubtext": "Informationen zum Schutz Ihrer personenbezogenen Daten gemäß der Datenschutz-Grundverordnung (DSGVO).",
+  "sections": [
+    { "heading": "Verantwortlicher", "body": "CLUB REAL Immobiliensachverständige\nZVR-Zahl: 469893173\nc/o Immobilienverwaltung Mag. Christian Krenauer GmbH\nMariahilfer Straße 57-59/14\n1060 Wien, Österreich\nE-Mail: willkommen@clubreal.at" },
+    { "heading": "Erhebung und Verarbeitung personenbezogener Daten", "body": "Beim Besuch unserer Website werden automatisch technische Informationen erfasst, die Ihr Browser an unseren Server übermittelt. Dazu gehören IP-Adresse, Browsertyp und -version, Betriebssystem, Referrer-URL, Uhrzeit der Serveranfrage und die aufgerufene Seite. Diese Daten werden ausschließlich zur Sicherstellung eines reibungslosen Betriebs der Website verwendet und nicht mit anderen Datenquellen zusammengeführt." },
+    { "heading": "Zweck der Datenverarbeitung", "body": "Wir verarbeiten personenbezogene Daten ausschließlich zur Bereitstellung und Verbesserung unserer Website, zur Beantwortung von Kontaktanfragen sowie zur Erfüllung vereinsinterner Verwaltungsaufgaben." },
+    { "heading": "Rechtsgrundlage", "body": "Die Verarbeitung personenbezogener Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bereitstellung einer funktionsfähigen Website)." },
+    { "heading": "Speicherdauer", "body": "Personenbezogene Daten werden nur so lange gespeichert, wie dies für den jeweiligen Verarbeitungszweck erforderlich ist oder gesetzliche Aufbewahrungsfristen dies vorschreiben. Nach Ablauf der Fristen werden die Daten routinemäßig gelöscht." },
+    { "heading": "Ihre Rechte", "body": "Sie haben das Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten, auf Berichtigung unrichtiger Daten, auf Löschung, auf Einschränkung der Verarbeitung, auf Datenübertragbarkeit sowie auf Widerspruch gegen die Verarbeitung. Darüber hinaus steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde (Österreichische Datenschutzbehörde) zu." },
+    { "heading": "Cookies", "body": "Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind. Es werden keine Tracking- oder Analyse-Cookies eingesetzt." },
+    { "heading": "Kontakt für Datenschutzanfragen", "body": "Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte wenden Sie sich bitte an: willkommen@clubreal.at" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "heroBadge": "Unser Angebot",
+  "heroHeading": "Gemeinsam mehr erreichen",
+  "heroSubtext": "Der Immobilienmarkt wird komplexer. Umso wichtiger ist ein starkes Netzwerk, das Wissen teilt, Standards setzt und Kollegialität lebt.",
+  "benefitsLabel": "Ihre Vorteile",
+  "benefitsHeading": "Was Club Real Ihnen bietet",
+  "benefits": [
+    { "icon": "users", "title": "Netzwerk", "description": "Zugang zu einem exklusiven Kreis von qualifizierten Immobilien-Sachverständigen in ganz Österreich." },
+    { "icon": "messageSquare", "title": "Plattform", "description": "Eine Plattform für fachlichen Austausch, Diskussion und die gemeinsame Weiterentwicklung von Bewertungsstandards." },
+    { "icon": "trendingUp", "title": "Weiterentwicklung", "description": "Fachliche und persönliche Weiterbildung durch Vorträge, Workshops und den kollegialen Erfahrungsaustausch." },
+    { "icon": "calendar", "title": "Veranstaltungen", "description": "Regelmäßige Events, Fachtagungen und gesellige Treffen stärken den Zusammenhalt und erweitern den Horizont." },
+    { "icon": "heart", "title": "Gemeinschaft", "description": "Ein Verein, der nicht nur fachlich, sondern auch menschlich verbindet – mit echtem Zusammenhalt und gegenseitigem Respekt." }
+  ],
+  "ctaLabel": "Werden Sie Teil von Club Real",
+  "ctaHeading": "Wissen teilen. Haltung zeigen.\nGemeinsam wachsen.",
+  "ctaBody": "Wir sind Profis – und eine Gemeinschaft, die fachliche Exzellenz mit Begeisterung verbindet. Der Club Real wird von Menschen getragen, die professionelle Integrität leben und kollegialen Austausch schätzen.",
+  "ctaButtonLabel": "Jetzt Kontakt aufnehmen"
+}

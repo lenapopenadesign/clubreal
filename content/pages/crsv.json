@@ -1,0 +1,11 @@
+{
+  "heroHeading": "CRSV – Club Real\nSachverständiger",
+  "heroSubtext": "Die CRSV-Zertifizierung steht für Qualität, Verantwortung und Engagement.",
+  "valuesIntro": "Nur Mitglieder des Club Real können den Titel CRSV erwerben – eine Auszeichnung, die zeigt:",
+  "values": [
+    { "icon": "heartHandshake", "title": "Verbundenheit", "description": "Verbundenheit mit den Vereinszielen und der Gemeinschaft der Sachverständigen." },
+    { "icon": "trendingUp", "title": "Engagement", "description": "Engagement für fachliche und persönliche Weiterentwicklung als Sachverständiger." },
+    { "icon": "shieldCheck", "title": "Verantwortung", "description": "Verantwortung für hohe Qualitäts- und Ethikstandards in der Immobilienbewertung." }
+  ],
+  "legalText": "Die Zertifizierung dokumentiert im Sinne des § 1299 ABGB das öffentliche Bekenntnis zu einem Beruf und zu einem hohen Qualitätsbewusstsein. Sie setzt ein klares qualitatives Selbstverständnis, die Bereitschaft zu kontinuierlicher fachlicher Weiterentwicklung sowie ein gelebtes Miteinander im Verein voraus."
+}

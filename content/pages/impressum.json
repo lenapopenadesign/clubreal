@@ -1,0 +1,12 @@
+{
+  "heroHeading": "Impressum",
+  "heroSubtext": "Angaben gemäß § 5 E-Commerce-Gesetz (ECG) und § 25 Mediengesetz.",
+  "sections": [
+    { "heading": "Verein", "body": "CLUB REAL Immobiliensachverständige\nZVR-Zahl: 469893173" },
+    { "heading": "Vereinssitz", "body": "c/o Immobilienverwaltung Mag. Christian Krenauer GmbH\nMariahilfer Straße 57-59/14\n1060 Wien, Österreich" },
+    { "heading": "Vereinsobmann", "body": "Dr. Walter-Wolfgang Reichling" },
+    { "heading": "Kontakt", "body": "E-Mail: willkommen@clubreal.at" },
+    { "heading": "Haftungsausschluss", "body": "Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Gewähr. Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Eine Verpflichtung zur Überwachung übermittelter oder gespeicherter fremder Informationen besteht nicht." },
+    { "heading": "Urheberrecht", "body": "Die durch den Verein erstellten Inhalte und Werke auf diesen Seiten unterliegen dem österreichischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des Vereins." }
+  ]
+}
