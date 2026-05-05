@@ -3,6 +3,8 @@ name: Build & Deploy
 on:
   push:
     branches: [astro-port]
+  schedule:
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 jobs:
