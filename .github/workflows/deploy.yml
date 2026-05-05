@@ -2,7 +2,7 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [astro-port]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
         env:
           TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-          GITHUB_BRANCH: astro-port
+          GITHUB_BRANCH: main
 
       - name: Deploy to World4you via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
