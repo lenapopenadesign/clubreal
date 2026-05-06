@@ -56,31 +56,10 @@ type Query {
   document(collection: String, relativePath: String): DocumentNode!
   homePage(relativePath: String): HomePage!
   homePageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: HomePageFilter): HomePageConnection!
-  warumPage(relativePath: String): WarumPage!
-  warumPageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: WarumPageFilter): WarumPageConnection!
-  crsvPage(relativePath: String): CrsvPage!
-  crsvPageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: CrsvPageFilter): CrsvPageConnection!
-  kontaktPage(relativePath: String): KontaktPage!
-  kontaktPageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: KontaktPageFilter): KontaktPageConnection!
-  datenschutzPage(relativePath: String): DatenschutzPage!
-  datenschutzPageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: DatenschutzPageFilter): DatenschutzPageConnection!
-  impressumPage(relativePath: String): ImpressumPage!
-  impressumPageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ImpressumPageFilter): ImpressumPageConnection!
-  statutenPage(relativePath: String): StatutenPage!
-  statutenPageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: StatutenPageFilter): StatutenPageConnection!
-  membersDoc(relativePath: String): MembersDoc!
-  membersDocConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: MembersDocFilter): MembersDocConnection!
 }
 
 input DocumentFilter {
   homePage: HomePageFilter
-  warumPage: WarumPageFilter
-  crsvPage: CrsvPageFilter
-  kontaktPage: KontaktPageFilter
-  datenschutzPage: DatenschutzPageFilter
-  impressumPage: ImpressumPageFilter
-  statutenPage: StatutenPageFilter
-  membersDoc: MembersDocFilter
 }
 
 type DocumentConnectionEdges {
@@ -106,26 +85,10 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = HomePage | WarumPage | CrsvPage | KontaktPage | DatenschutzPage | ImpressumPage | StatutenPage | MembersDoc | Folder
-
-type HomePageFeatures {
-  icon: String
-  title: String
-  description: String
-}
+union DocumentNode = HomePage | Folder
 
 type HomePage implements Node & Document {
   heroHeading: String
-  heroSubtext: String
-  heroCta: String
-  featuresLabel: String
-  featuresHeading: String
-  featuresSubtext: String
-  features: [HomePageFeatures]
-  missionLabel: String
-  missionHeading: String
-  missionBody: String
-  missionQuote: String
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -138,24 +101,8 @@ input StringFilter {
   in: [String]
 }
 
-input HomePageFeaturesFilter {
-  icon: StringFilter
-  title: StringFilter
-  description: StringFilter
-}
-
 input HomePageFilter {
   heroHeading: StringFilter
-  heroSubtext: StringFilter
-  heroCta: StringFilter
-  featuresLabel: StringFilter
-  featuresHeading: StringFilter
-  featuresSubtext: StringFilter
-  features: HomePageFeaturesFilter
-  missionLabel: StringFilter
-  missionHeading: StringFilter
-  missionBody: StringFilter
-  missionQuote: StringFilter
 }
 
 type HomePageConnectionEdges {
@@ -169,284 +116,6 @@ type HomePageConnection implements Connection {
   edges: [HomePageConnectionEdges]
 }
 
-type WarumPageBenefits {
-  icon: String
-  title: String
-  description: String
-}
-
-type WarumPage implements Node & Document {
-  heroBadge: String
-  heroHeading: String
-  heroSubtext: String
-  benefitsLabel: String
-  benefitsHeading: String
-  benefits: [WarumPageBenefits]
-  ctaLabel: String
-  ctaHeading: String
-  ctaBody: String
-  ctaButtonLabel: String
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input WarumPageBenefitsFilter {
-  icon: StringFilter
-  title: StringFilter
-  description: StringFilter
-}
-
-input WarumPageFilter {
-  heroBadge: StringFilter
-  heroHeading: StringFilter
-  heroSubtext: StringFilter
-  benefitsLabel: StringFilter
-  benefitsHeading: StringFilter
-  benefits: WarumPageBenefitsFilter
-  ctaLabel: StringFilter
-  ctaHeading: StringFilter
-  ctaBody: StringFilter
-  ctaButtonLabel: StringFilter
-}
-
-type WarumPageConnectionEdges {
-  cursor: String!
-  node: WarumPage
-}
-
-type WarumPageConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [WarumPageConnectionEdges]
-}
-
-type CrsvPageValues {
-  icon: String
-  title: String
-  description: String
-}
-
-type CrsvPage implements Node & Document {
-  heroHeading: String
-  heroSubtext: String
-  valuesIntro: String
-  values: [CrsvPageValues]
-  legalText: String
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input CrsvPageValuesFilter {
-  icon: StringFilter
-  title: StringFilter
-  description: StringFilter
-}
-
-input CrsvPageFilter {
-  heroHeading: StringFilter
-  heroSubtext: StringFilter
-  valuesIntro: StringFilter
-  values: CrsvPageValuesFilter
-  legalText: StringFilter
-}
-
-type CrsvPageConnectionEdges {
-  cursor: String!
-  node: CrsvPage
-}
-
-type CrsvPageConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [CrsvPageConnectionEdges]
-}
-
-type KontaktPage implements Node & Document {
-  heroHeading: String
-  heroBody: String
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input KontaktPageFilter {
-  heroHeading: StringFilter
-  heroBody: StringFilter
-}
-
-type KontaktPageConnectionEdges {
-  cursor: String!
-  node: KontaktPage
-}
-
-type KontaktPageConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [KontaktPageConnectionEdges]
-}
-
-type DatenschutzPageSections {
-  heading: String
-  body: String
-}
-
-type DatenschutzPage implements Node & Document {
-  heroHeading: String
-  heroSubtext: String
-  sections: [DatenschutzPageSections]
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input DatenschutzPageSectionsFilter {
-  heading: StringFilter
-  body: StringFilter
-}
-
-input DatenschutzPageFilter {
-  heroHeading: StringFilter
-  heroSubtext: StringFilter
-  sections: DatenschutzPageSectionsFilter
-}
-
-type DatenschutzPageConnectionEdges {
-  cursor: String!
-  node: DatenschutzPage
-}
-
-type DatenschutzPageConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [DatenschutzPageConnectionEdges]
-}
-
-type ImpressumPageSections {
-  heading: String
-  body: String
-}
-
-type ImpressumPage implements Node & Document {
-  heroHeading: String
-  heroSubtext: String
-  sections: [ImpressumPageSections]
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input ImpressumPageSectionsFilter {
-  heading: StringFilter
-  body: StringFilter
-}
-
-input ImpressumPageFilter {
-  heroHeading: StringFilter
-  heroSubtext: StringFilter
-  sections: ImpressumPageSectionsFilter
-}
-
-type ImpressumPageConnectionEdges {
-  cursor: String!
-  node: ImpressumPage
-}
-
-type ImpressumPageConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [ImpressumPageConnectionEdges]
-}
-
-type StatutenPageSections {
-  heading: String
-  body: String
-}
-
-type StatutenPage implements Node & Document {
-  heroHeading: String
-  heroSubtext: String
-  pdfUrl: String
-  pdfButtonLabel: String
-  sections: [StatutenPageSections]
-  footerNote: String
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input StatutenPageSectionsFilter {
-  heading: StringFilter
-  body: StringFilter
-}
-
-input StatutenPageFilter {
-  heroHeading: StringFilter
-  heroSubtext: StringFilter
-  pdfUrl: StringFilter
-  pdfButtonLabel: StringFilter
-  sections: StatutenPageSectionsFilter
-  footerNote: StringFilter
-}
-
-type StatutenPageConnectionEdges {
-  cursor: String!
-  node: StatutenPage
-}
-
-type StatutenPageConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [StatutenPageConnectionEdges]
-}
-
-type MembersDocMembersLinks {
-  type: String
-  url: String
-}
-
-type MembersDocMembers {
-  name: String
-  role: String
-  location: String
-  links: [MembersDocMembersLinks]
-}
-
-type MembersDoc implements Node & Document {
-  members: [MembersDocMembers]
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input MembersDocMembersLinksFilter {
-  type: StringFilter
-  url: StringFilter
-}
-
-input MembersDocMembersFilter {
-  name: StringFilter
-  role: StringFilter
-  location: StringFilter
-  links: MembersDocMembersLinksFilter
-}
-
-input MembersDocFilter {
-  members: MembersDocMembersFilter
-}
-
-type MembersDocConnectionEdges {
-  cursor: String!
-  node: MembersDoc
-}
-
-type MembersDocConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [MembersDocConnectionEdges]
-}
-
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
@@ -455,153 +124,19 @@ type Mutation {
   createFolder(collection: String, relativePath: String!): DocumentNode!
   updateHomePage(relativePath: String!, params: HomePageMutation!): HomePage!
   createHomePage(relativePath: String!, params: HomePageMutation!): HomePage!
-  updateWarumPage(relativePath: String!, params: WarumPageMutation!): WarumPage!
-  createWarumPage(relativePath: String!, params: WarumPageMutation!): WarumPage!
-  updateCrsvPage(relativePath: String!, params: CrsvPageMutation!): CrsvPage!
-  createCrsvPage(relativePath: String!, params: CrsvPageMutation!): CrsvPage!
-  updateKontaktPage(relativePath: String!, params: KontaktPageMutation!): KontaktPage!
-  createKontaktPage(relativePath: String!, params: KontaktPageMutation!): KontaktPage!
-  updateDatenschutzPage(relativePath: String!, params: DatenschutzPageMutation!): DatenschutzPage!
-  createDatenschutzPage(relativePath: String!, params: DatenschutzPageMutation!): DatenschutzPage!
-  updateImpressumPage(relativePath: String!, params: ImpressumPageMutation!): ImpressumPage!
-  createImpressumPage(relativePath: String!, params: ImpressumPageMutation!): ImpressumPage!
-  updateStatutenPage(relativePath: String!, params: StatutenPageMutation!): StatutenPage!
-  createStatutenPage(relativePath: String!, params: StatutenPageMutation!): StatutenPage!
-  updateMembersDoc(relativePath: String!, params: MembersDocMutation!): MembersDoc!
-  createMembersDoc(relativePath: String!, params: MembersDocMutation!): MembersDoc!
 }
 
 input DocumentUpdateMutation {
   homePage: HomePageMutation
-  warumPage: WarumPageMutation
-  crsvPage: CrsvPageMutation
-  kontaktPage: KontaktPageMutation
-  datenschutzPage: DatenschutzPageMutation
-  impressumPage: ImpressumPageMutation
-  statutenPage: StatutenPageMutation
-  membersDoc: MembersDocMutation
   relativePath: String
 }
 
 input DocumentMutation {
   homePage: HomePageMutation
-  warumPage: WarumPageMutation
-  crsvPage: CrsvPageMutation
-  kontaktPage: KontaktPageMutation
-  datenschutzPage: DatenschutzPageMutation
-  impressumPage: ImpressumPageMutation
-  statutenPage: StatutenPageMutation
-  membersDoc: MembersDocMutation
-}
-
-input HomePageFeaturesMutation {
-  icon: String
-  title: String
-  description: String
 }
 
 input HomePageMutation {
   heroHeading: String
-  heroSubtext: String
-  heroCta: String
-  featuresLabel: String
-  featuresHeading: String
-  featuresSubtext: String
-  features: [HomePageFeaturesMutation]
-  missionLabel: String
-  missionHeading: String
-  missionBody: String
-  missionQuote: String
-}
-
-input WarumPageBenefitsMutation {
-  icon: String
-  title: String
-  description: String
-}
-
-input WarumPageMutation {
-  heroBadge: String
-  heroHeading: String
-  heroSubtext: String
-  benefitsLabel: String
-  benefitsHeading: String
-  benefits: [WarumPageBenefitsMutation]
-  ctaLabel: String
-  ctaHeading: String
-  ctaBody: String
-  ctaButtonLabel: String
-}
-
-input CrsvPageValuesMutation {
-  icon: String
-  title: String
-  description: String
-}
-
-input CrsvPageMutation {
-  heroHeading: String
-  heroSubtext: String
-  valuesIntro: String
-  values: [CrsvPageValuesMutation]
-  legalText: String
-}
-
-input KontaktPageMutation {
-  heroHeading: String
-  heroBody: String
-}
-
-input DatenschutzPageSectionsMutation {
-  heading: String
-  body: String
-}
-
-input DatenschutzPageMutation {
-  heroHeading: String
-  heroSubtext: String
-  sections: [DatenschutzPageSectionsMutation]
-}
-
-input ImpressumPageSectionsMutation {
-  heading: String
-  body: String
-}
-
-input ImpressumPageMutation {
-  heroHeading: String
-  heroSubtext: String
-  sections: [ImpressumPageSectionsMutation]
-}
-
-input StatutenPageSectionsMutation {
-  heading: String
-  body: String
-}
-
-input StatutenPageMutation {
-  heroHeading: String
-  heroSubtext: String
-  pdfUrl: String
-  pdfButtonLabel: String
-  sections: [StatutenPageSectionsMutation]
-  footerNote: String
-}
-
-input MembersDocMembersLinksMutation {
-  type: String
-  url: String
-}
-
-input MembersDocMembersMutation {
-  name: String
-  role: String
-  location: String
-  links: [MembersDocMembersLinksMutation]
-}
-
-input MembersDocMutation {
-  members: [MembersDocMembersMutation]
 }
 
 schema {
