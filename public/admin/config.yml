@@ -1,0 +1,197 @@
+backend:
+  name: github
+  repo: lenapopenadesign/clubreal
+  branch: main
+
+locale: de
+
+collections:
+  - name: pages
+    label: Seiten
+    files:
+
+      - name: home
+        label: Startseite
+        file: content/pages/home.json
+        fields:
+          - { name: heroHeading, label: "Hero: Überschrift", widget: string }
+          - { name: heroSubtext, label: "Hero: Text", widget: text }
+          - { name: heroCta, label: "Hero: Button-Text", widget: string }
+          - { name: featuresLabel, label: "Features: Kicker", widget: string }
+          - { name: featuresHeading, label: "Features: Überschrift", widget: string }
+          - { name: featuresSubtext, label: "Features: Beschreibung", widget: text }
+          - name: features
+            label: Features
+            widget: list
+            fields:
+              - name: icon
+                label: Icon
+                widget: select
+                options:
+                  - { label: Klemmbrett, value: clipboardList }
+                  - { label: Gebäude, value: building2 }
+                  - { label: Haus, value: house }
+                  - { label: Bauhelm, value: hardHat }
+                  - { label: Personen, value: users }
+                  - { label: Sprechblase, value: messageSquare }
+                  - { label: "Trend aufwärts", value: trendingUp }
+                  - { label: Kalender, value: calendar }
+                  - { label: Herz, value: heart }
+                  - { label: Handshake, value: heartHandshake }
+                  - { label: Schild, value: shieldCheck }
+              - { name: title, label: Titel, widget: string }
+              - { name: description, label: Beschreibung, widget: text }
+          - { name: missionLabel, label: "Mission: Kicker", widget: string }
+          - { name: missionHeading, label: "Mission: Überschrift", widget: string }
+          - { name: missionBody, label: "Mission: Text", widget: text }
+          - { name: missionQuote, label: "Mission: Zitat", widget: string }
+
+      - name: warum
+        label: Warum Club Real
+        file: content/pages/warum.json
+        fields:
+          - { name: heroBadge, label: "Hero: Badge", widget: string }
+          - { name: heroHeading, label: "Hero: Überschrift", widget: string }
+          - { name: heroSubtext, label: "Hero: Text", widget: text }
+          - { name: benefitsLabel, label: "Vorteile: Kicker", widget: string }
+          - { name: benefitsHeading, label: "Vorteile: Überschrift", widget: string }
+          - name: benefits
+            label: Vorteile
+            widget: list
+            fields:
+              - name: icon
+                label: Icon
+                widget: select
+                options:
+                  - { label: Klemmbrett, value: clipboardList }
+                  - { label: Gebäude, value: building2 }
+                  - { label: Haus, value: house }
+                  - { label: Bauhelm, value: hardHat }
+                  - { label: Personen, value: users }
+                  - { label: Sprechblase, value: messageSquare }
+                  - { label: "Trend aufwärts", value: trendingUp }
+                  - { label: Kalender, value: calendar }
+                  - { label: Herz, value: heart }
+                  - { label: Handshake, value: heartHandshake }
+                  - { label: Schild, value: shieldCheck }
+              - { name: title, label: Titel, widget: string }
+              - { name: description, label: Beschreibung, widget: text }
+          - { name: ctaLabel, label: "CTA: Kicker", widget: string }
+          - { name: ctaHeading, label: "CTA: Überschrift", widget: text }
+          - { name: ctaBody, label: "CTA: Text", widget: text }
+          - { name: ctaButtonLabel, label: "CTA: Button-Text", widget: string }
+
+      - name: crsv
+        label: CRSV
+        file: content/pages/crsv.json
+        fields:
+          - { name: heroHeading, label: "Hero: Überschrift", widget: text }
+          - { name: heroSubtext, label: "Hero: Text", widget: text }
+          - { name: valuesIntro, label: "Werte: Einleitung", widget: text }
+          - name: values
+            label: Werte
+            widget: list
+            fields:
+              - name: icon
+                label: Icon
+                widget: select
+                options:
+                  - { label: Klemmbrett, value: clipboardList }
+                  - { label: Gebäude, value: building2 }
+                  - { label: Haus, value: house }
+                  - { label: Bauhelm, value: hardHat }
+                  - { label: Personen, value: users }
+                  - { label: Sprechblase, value: messageSquare }
+                  - { label: "Trend aufwärts", value: trendingUp }
+                  - { label: Kalender, value: calendar }
+                  - { label: Herz, value: heart }
+                  - { label: Handshake, value: heartHandshake }
+                  - { label: Schild, value: shieldCheck }
+              - { name: title, label: Titel, widget: string }
+              - { name: description, label: Beschreibung, widget: text }
+          - { name: legalText, label: Rechtstext, widget: text }
+
+      - name: kontakt
+        label: Kontakt
+        file: content/pages/kontakt.json
+        fields:
+          - { name: heroHeading, label: "Hero: Überschrift", widget: string }
+          - { name: heroBody, label: "Hero: Text", widget: text }
+
+      - name: datenschutz
+        label: Datenschutzerklärung
+        file: content/pages/datenschutz.json
+        fields:
+          - { name: heroHeading, label: "Hero: Überschrift", widget: string }
+          - { name: heroSubtext, label: "Hero: Text", widget: text }
+          - name: sections
+            label: Abschnitte
+            widget: list
+            fields:
+              - { name: heading, label: Überschrift, widget: string }
+              - { name: body, label: Text, widget: text }
+
+      - name: impressum
+        label: Impressum
+        file: content/pages/impressum.json
+        fields:
+          - { name: heroHeading, label: "Hero: Überschrift", widget: string }
+          - { name: heroSubtext, label: "Hero: Text", widget: text }
+          - name: sections
+            label: Abschnitte
+            widget: list
+            fields:
+              - { name: heading, label: Überschrift, widget: string }
+              - { name: body, label: Text, widget: text }
+
+      - name: statuten
+        label: Statuten
+        file: content/pages/statuten.json
+        fields:
+          - { name: heroHeading, label: "Hero: Überschrift", widget: string }
+          - { name: heroSubtext, label: "Hero: Text", widget: text }
+          - { name: pdfUrl, label: PDF-Link, widget: string }
+          - { name: pdfButtonLabel, label: "PDF: Button-Text", widget: string }
+          - name: sections
+            label: Paragraphen
+            widget: list
+            fields:
+              - { name: heading, label: Überschrift, widget: string }
+              - { name: body, label: Text, widget: text }
+          - { name: footerNote, label: Fußnote, widget: string }
+
+  - name: members
+    label: Mitglieder
+    files:
+      - name: members
+        label: Mitgliederverzeichnis
+        file: content/members.json
+        fields:
+          - name: members
+            label: Mitglieder
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - name: role
+                label: Rolle
+                widget: select
+                options:
+                  - { label: Ordentliches Mitglied, value: Ordentliches Mitglied }
+                  - { label: Ehrenmitglied, value: Ehrenmitglied }
+                  - { label: "Vorstand (Obmann)", value: "Vorstand (Obmann)" }
+                  - { label: "Vorstand (Obmann Stv.)", value: "Vorstand (Obmann Stv.)" }
+                  - { label: "Vorstand (Schriftführer)", value: "Vorstand (Schriftführer)" }
+                  - { label: "Vorstand (Kassierin)", value: "Vorstand (Kassierin)" }
+              - { name: location, label: Bundesland, widget: string }
+              - name: links
+                label: Links
+                widget: list
+                fields:
+                  - name: type
+                    label: Typ
+                    widget: select
+                    options:
+                      - { label: Website, value: website }
+                      - { label: SV Liste Justiz, value: justiz }
+                      - { label: LinkedIn, value: linkedin }
+                  - { name: url, label: URL, widget: string }
