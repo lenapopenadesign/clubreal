@@ -3,6 +3,9 @@ backend:
   repo: lenapopenadesign/clubreal
   branch: main
 
+media_folder: public/uploads
+public_folder: /uploads
+
 locale: de
 
 collections:
