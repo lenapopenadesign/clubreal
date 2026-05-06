@@ -18,7 +18,11 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build
+      - run: npm run build:cms
+        env:
+          TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+          GITHUB_BRANCH: main
 
       - name: Deploy to World4you via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
