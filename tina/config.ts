@@ -171,7 +171,6 @@ export default defineConfig({
             name: 'members',
             label: 'Mitglieder',
             list: true,
-            ui: { itemProps: (item) => ({ label: item.name }) },
             fields: [
               { type: 'string', name: 'name', label: 'Name' },
               {
@@ -193,7 +192,6 @@ export default defineConfig({
                 name: 'links',
                 label: 'Links',
                 list: true,
-                ui: { itemProps: (item) => ({ label: item.type }) },
                 fields: [
                   {
                     type: 'string',

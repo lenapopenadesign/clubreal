@@ -23,7 +23,7 @@ var sectionFields = [
   { type: "string", name: "body", label: "Text (eine Zeile = ein Absatz)", ui: { component: "textarea" } }
 ];
 var config_default = defineConfig({
-  branch: process.env.GITHUB_BRANCH ?? "astro-port",
+  branch: process.env.GITHUB_BRANCH ?? "main",
   clientId: process.env.TINA_CLIENT_ID ?? "",
   token: process.env.TINA_TOKEN ?? "",
   build: {
@@ -158,7 +158,6 @@ var config_default = defineConfig({
             name: "members",
             label: "Mitglieder",
             list: true,
-            ui: { itemProps: (item) => ({ label: item.name }) },
             fields: [
               { type: "string", name: "name", label: "Name" },
               {
@@ -180,7 +179,6 @@ var config_default = defineConfig({
                 name: "links",
                 label: "Links",
                 list: true,
-                ui: { itemProps: (item) => ({ label: item.type }) },
                 fields: [
                   {
                     type: "string",
