@@ -26,7 +26,7 @@ const sectionFields = [
 ];
 
 export default defineConfig({
-  branch: process.env.GITHUB_BRANCH ?? 'astro-port',
+  branch: process.env.GITHUB_BRANCH ?? 'main',
   clientId: process.env.TINA_CLIENT_ID ?? '',
   token: process.env.TINA_TOKEN ?? '',
 
