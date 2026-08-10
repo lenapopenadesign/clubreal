@@ -281,6 +281,10 @@
         {
           "type": "website",
           "url": "https://www.buero22.at"
+        },
+        {
+          "type": "justiz",
+          "url": "https://justizonline.gv.at/jop/web/exl/W374907"
         }
       ]
     },
