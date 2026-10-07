@@ -11,12 +11,12 @@
   "dependencies": {
     "@astrojs/react": "^4.0.0",
     "@astrojs/sitemap": "^3.7.2",
-    "@tinacms/cli": "^2.2.5",
+    "@tinacms/cli": "^4.0.1",
     "astro": "^5.0.0",
     "lucide-react": "^0.577.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tinacms": "^3.7.5"
+    "tinacms": "^3.14.3"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",

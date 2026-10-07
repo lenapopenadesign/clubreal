@@ -7,13 +7,13 @@
     })
     return str
   }
-  export type Maybe<T> = T | null;
-export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
-export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
+  import type { TinaMarkdownContent } from 'tinacms/dist/rich-text';
+/** Internal type. DO NOT USE DIRECTLY. */
+type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+/** Internal type. DO NOT USE DIRECTLY. */
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
+export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: { input: string; output: string; }
@@ -24,6 +24,8 @@ export type Scalars = {
   /** References another document, used as a foreign key */
   Reference: { input: any; output: any; }
   JSON: { input: any; output: any; }
+  /** A rich-text document, renderable by TinaMarkdown */
+  RichText: { input: TinaMarkdownContent; output: TinaMarkdownContent; }
 };
 
 export type SystemInfo = {
@@ -949,173 +951,290 @@ export type MembersDocMutation = {
   members?: InputMaybe<Array<InputMaybe<MembersDocMembersMutation>>>;
 };
 
-export type HomePagePartsFragment = { __typename: 'HomePage', heroHeading?: string | null, heroSubtext?: string | null, heroCta?: string | null, featuresLabel?: string | null, featuresHeading?: string | null, featuresSubtext?: string | null, missionLabel?: string | null, missionHeading?: string | null, missionBody?: string | null, missionQuote?: string | null, features?: Array<{ __typename: 'HomePageFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null };
+export type StringFilter = {
+  startsWith?: string | null | undefined;
+  eq?: string | null | undefined;
+  exists?: boolean | null | undefined;
+  in?: Array<string | null | undefined> | null | undefined;
+};
 
-export type WarumPagePartsFragment = { __typename: 'WarumPage', heroBadge?: string | null, heroHeading?: string | null, heroSubtext?: string | null, benefitsLabel?: string | null, benefitsHeading?: string | null, ctaLabel?: string | null, ctaHeading?: string | null, ctaBody?: string | null, ctaButtonLabel?: string | null, benefits?: Array<{ __typename: 'WarumPageBenefits', icon?: string | null, title?: string | null, description?: string | null } | null> | null };
+export type HomePageFeaturesFilter = {
+  icon?: StringFilter | null | undefined;
+  title?: StringFilter | null | undefined;
+  description?: StringFilter | null | undefined;
+};
 
-export type CrsvPagePartsFragment = { __typename: 'CrsvPage', heroHeading?: string | null, heroSubtext?: string | null, valuesIntro?: string | null, legalText?: string | null, values?: Array<{ __typename: 'CrsvPageValues', icon?: string | null, title?: string | null, description?: string | null } | null> | null };
+export type HomePageFilter = {
+  heroHeading?: StringFilter | null | undefined;
+  heroSubtext?: StringFilter | null | undefined;
+  heroCta?: StringFilter | null | undefined;
+  featuresLabel?: StringFilter | null | undefined;
+  featuresHeading?: StringFilter | null | undefined;
+  featuresSubtext?: StringFilter | null | undefined;
+  features?: HomePageFeaturesFilter | null | undefined;
+  missionLabel?: StringFilter | null | undefined;
+  missionHeading?: StringFilter | null | undefined;
+  missionBody?: StringFilter | null | undefined;
+  missionQuote?: StringFilter | null | undefined;
+};
 
-export type KontaktPagePartsFragment = { __typename: 'KontaktPage', heroHeading?: string | null, heroBody?: string | null };
+export type WarumPageBenefitsFilter = {
+  icon?: StringFilter | null | undefined;
+  title?: StringFilter | null | undefined;
+  description?: StringFilter | null | undefined;
+};
 
-export type DatenschutzPagePartsFragment = { __typename: 'DatenschutzPage', heroHeading?: string | null, heroSubtext?: string | null, sections?: Array<{ __typename: 'DatenschutzPageSections', heading?: string | null, body?: string | null } | null> | null };
+export type WarumPageFilter = {
+  heroBadge?: StringFilter | null | undefined;
+  heroHeading?: StringFilter | null | undefined;
+  heroSubtext?: StringFilter | null | undefined;
+  benefitsLabel?: StringFilter | null | undefined;
+  benefitsHeading?: StringFilter | null | undefined;
+  benefits?: WarumPageBenefitsFilter | null | undefined;
+  ctaLabel?: StringFilter | null | undefined;
+  ctaHeading?: StringFilter | null | undefined;
+  ctaBody?: StringFilter | null | undefined;
+  ctaButtonLabel?: StringFilter | null | undefined;
+};
 
-export type ImpressumPagePartsFragment = { __typename: 'ImpressumPage', heroHeading?: string | null, heroSubtext?: string | null, sections?: Array<{ __typename: 'ImpressumPageSections', heading?: string | null, body?: string | null } | null> | null };
+export type CrsvPageValuesFilter = {
+  icon?: StringFilter | null | undefined;
+  title?: StringFilter | null | undefined;
+  description?: StringFilter | null | undefined;
+};
 
-export type StatutenPagePartsFragment = { __typename: 'StatutenPage', heroHeading?: string | null, heroSubtext?: string | null, pdfUrl?: string | null, pdfButtonLabel?: string | null, footerNote?: string | null, sections?: Array<{ __typename: 'StatutenPageSections', heading?: string | null, body?: string | null } | null> | null };
+export type CrsvPageFilter = {
+  heroHeading?: StringFilter | null | undefined;
+  heroSubtext?: StringFilter | null | undefined;
+  valuesIntro?: StringFilter | null | undefined;
+  values?: CrsvPageValuesFilter | null | undefined;
+  legalText?: StringFilter | null | undefined;
+};
 
-export type MembersDocPartsFragment = { __typename: 'MembersDoc', members?: Array<{ __typename: 'MembersDocMembers', name?: string | null, role?: string | null, location?: string | null, links?: Array<{ __typename: 'MembersDocMembersLinks', type?: string | null, url?: string | null } | null> | null } | null> | null };
+export type KontaktPageFilter = {
+  heroHeading?: StringFilter | null | undefined;
+  heroBody?: StringFilter | null | undefined;
+};
+
+export type DatenschutzPageSectionsFilter = {
+  heading?: StringFilter | null | undefined;
+  body?: StringFilter | null | undefined;
+};
+
+export type DatenschutzPageFilter = {
+  heroHeading?: StringFilter | null | undefined;
+  heroSubtext?: StringFilter | null | undefined;
+  sections?: DatenschutzPageSectionsFilter | null | undefined;
+};
+
+export type ImpressumPageSectionsFilter = {
+  heading?: StringFilter | null | undefined;
+  body?: StringFilter | null | undefined;
+};
+
+export type ImpressumPageFilter = {
+  heroHeading?: StringFilter | null | undefined;
+  heroSubtext?: StringFilter | null | undefined;
+  sections?: ImpressumPageSectionsFilter | null | undefined;
+};
+
+export type StatutenPageSectionsFilter = {
+  heading?: StringFilter | null | undefined;
+  body?: StringFilter | null | undefined;
+};
+
+export type StatutenPageFilter = {
+  heroHeading?: StringFilter | null | undefined;
+  heroSubtext?: StringFilter | null | undefined;
+  pdfUrl?: StringFilter | null | undefined;
+  pdfButtonLabel?: StringFilter | null | undefined;
+  sections?: StatutenPageSectionsFilter | null | undefined;
+  footerNote?: StringFilter | null | undefined;
+};
+
+export type MembersDocMembersLinksFilter = {
+  type?: StringFilter | null | undefined;
+  url?: StringFilter | null | undefined;
+};
+
+export type MembersDocMembersFilter = {
+  name?: StringFilter | null | undefined;
+  role?: StringFilter | null | undefined;
+  location?: StringFilter | null | undefined;
+  links?: MembersDocMembersLinksFilter | null | undefined;
+};
+
+export type MembersDocFilter = {
+  members?: MembersDocMembersFilter | null | undefined;
+};
+
+export type HomePagePartsFragment = { __typename: 'HomePage', heroHeading: string | null, heroSubtext: string | null, heroCta: string | null, featuresLabel: string | null, featuresHeading: string | null, featuresSubtext: string | null, missionLabel: string | null, missionHeading: string | null, missionBody: string | null, missionQuote: string | null, features: Array<{ __typename: 'HomePageFeatures', icon: string | null, title: string | null, description: string | null } | null> | null };
+
+export type WarumPagePartsFragment = { __typename: 'WarumPage', heroBadge: string | null, heroHeading: string | null, heroSubtext: string | null, benefitsLabel: string | null, benefitsHeading: string | null, ctaLabel: string | null, ctaHeading: string | null, ctaBody: string | null, ctaButtonLabel: string | null, benefits: Array<{ __typename: 'WarumPageBenefits', icon: string | null, title: string | null, description: string | null } | null> | null };
+
+export type CrsvPagePartsFragment = { __typename: 'CrsvPage', heroHeading: string | null, heroSubtext: string | null, valuesIntro: string | null, legalText: string | null, values: Array<{ __typename: 'CrsvPageValues', icon: string | null, title: string | null, description: string | null } | null> | null };
+
+export type KontaktPagePartsFragment = { __typename: 'KontaktPage', heroHeading: string | null, heroBody: string | null };
+
+export type DatenschutzPagePartsFragment = { __typename: 'DatenschutzPage', heroHeading: string | null, heroSubtext: string | null, sections: Array<{ __typename: 'DatenschutzPageSections', heading: string | null, body: string | null } | null> | null };
+
+export type ImpressumPagePartsFragment = { __typename: 'ImpressumPage', heroHeading: string | null, heroSubtext: string | null, sections: Array<{ __typename: 'ImpressumPageSections', heading: string | null, body: string | null } | null> | null };
+
+export type StatutenPagePartsFragment = { __typename: 'StatutenPage', heroHeading: string | null, heroSubtext: string | null, pdfUrl: string | null, pdfButtonLabel: string | null, footerNote: string | null, sections: Array<{ __typename: 'StatutenPageSections', heading: string | null, body: string | null } | null> | null };
+
+export type MembersDocPartsFragment = { __typename: 'MembersDoc', members: Array<{ __typename: 'MembersDocMembers', name: string | null, role: string | null, location: string | null, links: Array<{ __typename: 'MembersDocMembersLinks', type: string | null, url: string | null } | null> | null } | null> | null };
 
 export type HomePageQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
+  relativePath: string;
 }>;
 
 
-export type HomePageQuery = { __typename?: 'Query', homePage: { __typename: 'HomePage', id: string, heroHeading?: string | null, heroSubtext?: string | null, heroCta?: string | null, featuresLabel?: string | null, featuresHeading?: string | null, featuresSubtext?: string | null, missionLabel?: string | null, missionHeading?: string | null, missionBody?: string | null, missionQuote?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, features?: Array<{ __typename: 'HomePageFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } };
+export type HomePageQuery = { homePage: { __typename: 'HomePage', id: string, heroHeading: string | null, heroSubtext: string | null, heroCta: string | null, featuresLabel: string | null, featuresHeading: string | null, featuresSubtext: string | null, missionLabel: string | null, missionHeading: string | null, missionBody: string | null, missionQuote: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, features: Array<{ __typename: 'HomePageFeatures', icon: string | null, title: string | null, description: string | null } | null> | null } };
 
 export type HomePageConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<HomePageFilter>;
+  before?: string | null | undefined;
+  after?: string | null | undefined;
+  first?: number | null | undefined;
+  last?: number | null | undefined;
+  sort?: string | null | undefined;
+  filter?: HomePageFilter | null | undefined;
 }>;
 
 
-export type HomePageConnectionQuery = { __typename?: 'Query', homePageConnection: { __typename?: 'HomePageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomePageConnectionEdges', cursor: string, node?: { __typename: 'HomePage', id: string, heroHeading?: string | null, heroSubtext?: string | null, heroCta?: string | null, featuresLabel?: string | null, featuresHeading?: string | null, featuresSubtext?: string | null, missionLabel?: string | null, missionHeading?: string | null, missionBody?: string | null, missionQuote?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, features?: Array<{ __typename: 'HomePageFeatures', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null } | null> | null } };
+export type HomePageConnectionQuery = { homePageConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node: { __typename: 'HomePage', id: string, heroHeading: string | null, heroSubtext: string | null, heroCta: string | null, featuresLabel: string | null, featuresHeading: string | null, featuresSubtext: string | null, missionLabel: string | null, missionHeading: string | null, missionBody: string | null, missionQuote: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, features: Array<{ __typename: 'HomePageFeatures', icon: string | null, title: string | null, description: string | null } | null> | null } | null } | null> | null } };
 
 export type WarumPageQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
+  relativePath: string;
 }>;
 
 
-export type WarumPageQuery = { __typename?: 'Query', warumPage: { __typename: 'WarumPage', id: string, heroBadge?: string | null, heroHeading?: string | null, heroSubtext?: string | null, benefitsLabel?: string | null, benefitsHeading?: string | null, ctaLabel?: string | null, ctaHeading?: string | null, ctaBody?: string | null, ctaButtonLabel?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, benefits?: Array<{ __typename: 'WarumPageBenefits', icon?: string | null, title?: string | null, description?: string | null } | null> | null } };
+export type WarumPageQuery = { warumPage: { __typename: 'WarumPage', id: string, heroBadge: string | null, heroHeading: string | null, heroSubtext: string | null, benefitsLabel: string | null, benefitsHeading: string | null, ctaLabel: string | null, ctaHeading: string | null, ctaBody: string | null, ctaButtonLabel: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, benefits: Array<{ __typename: 'WarumPageBenefits', icon: string | null, title: string | null, description: string | null } | null> | null } };
 
 export type WarumPageConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<WarumPageFilter>;
+  before?: string | null | undefined;
+  after?: string | null | undefined;
+  first?: number | null | undefined;
+  last?: number | null | undefined;
+  sort?: string | null | undefined;
+  filter?: WarumPageFilter | null | undefined;
 }>;
 
 
-export type WarumPageConnectionQuery = { __typename?: 'Query', warumPageConnection: { __typename?: 'WarumPageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'WarumPageConnectionEdges', cursor: string, node?: { __typename: 'WarumPage', id: string, heroBadge?: string | null, heroHeading?: string | null, heroSubtext?: string | null, benefitsLabel?: string | null, benefitsHeading?: string | null, ctaLabel?: string | null, ctaHeading?: string | null, ctaBody?: string | null, ctaButtonLabel?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, benefits?: Array<{ __typename: 'WarumPageBenefits', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null } | null> | null } };
+export type WarumPageConnectionQuery = { warumPageConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node: { __typename: 'WarumPage', id: string, heroBadge: string | null, heroHeading: string | null, heroSubtext: string | null, benefitsLabel: string | null, benefitsHeading: string | null, ctaLabel: string | null, ctaHeading: string | null, ctaBody: string | null, ctaButtonLabel: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, benefits: Array<{ __typename: 'WarumPageBenefits', icon: string | null, title: string | null, description: string | null } | null> | null } | null } | null> | null } };
 
 export type CrsvPageQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
+  relativePath: string;
 }>;
 
 
-export type CrsvPageQuery = { __typename?: 'Query', crsvPage: { __typename: 'CrsvPage', id: string, heroHeading?: string | null, heroSubtext?: string | null, valuesIntro?: string | null, legalText?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, values?: Array<{ __typename: 'CrsvPageValues', icon?: string | null, title?: string | null, description?: string | null } | null> | null } };
+export type CrsvPageQuery = { crsvPage: { __typename: 'CrsvPage', id: string, heroHeading: string | null, heroSubtext: string | null, valuesIntro: string | null, legalText: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, values: Array<{ __typename: 'CrsvPageValues', icon: string | null, title: string | null, description: string | null } | null> | null } };
 
 export type CrsvPageConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<CrsvPageFilter>;
+  before?: string | null | undefined;
+  after?: string | null | undefined;
+  first?: number | null | undefined;
+  last?: number | null | undefined;
+  sort?: string | null | undefined;
+  filter?: CrsvPageFilter | null | undefined;
 }>;
 
 
-export type CrsvPageConnectionQuery = { __typename?: 'Query', crsvPageConnection: { __typename?: 'CrsvPageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'CrsvPageConnectionEdges', cursor: string, node?: { __typename: 'CrsvPage', id: string, heroHeading?: string | null, heroSubtext?: string | null, valuesIntro?: string | null, legalText?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, values?: Array<{ __typename: 'CrsvPageValues', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null } | null> | null } };
+export type CrsvPageConnectionQuery = { crsvPageConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node: { __typename: 'CrsvPage', id: string, heroHeading: string | null, heroSubtext: string | null, valuesIntro: string | null, legalText: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, values: Array<{ __typename: 'CrsvPageValues', icon: string | null, title: string | null, description: string | null } | null> | null } | null } | null> | null } };
 
 export type KontaktPageQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
+  relativePath: string;
 }>;
 
 
-export type KontaktPageQuery = { __typename?: 'Query', kontaktPage: { __typename: 'KontaktPage', id: string, heroHeading?: string | null, heroBody?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type KontaktPageQuery = { kontaktPage: { __typename: 'KontaktPage', id: string, heroHeading: string | null, heroBody: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type KontaktPageConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<KontaktPageFilter>;
+  before?: string | null | undefined;
+  after?: string | null | undefined;
+  first?: number | null | undefined;
+  last?: number | null | undefined;
+  sort?: string | null | undefined;
+  filter?: KontaktPageFilter | null | undefined;
 }>;
 
 
-export type KontaktPageConnectionQuery = { __typename?: 'Query', kontaktPageConnection: { __typename?: 'KontaktPageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'KontaktPageConnectionEdges', cursor: string, node?: { __typename: 'KontaktPage', id: string, heroHeading?: string | null, heroBody?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type KontaktPageConnectionQuery = { kontaktPageConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node: { __typename: 'KontaktPage', id: string, heroHeading: string | null, heroBody: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type DatenschutzPageQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
+  relativePath: string;
 }>;
 
 
-export type DatenschutzPageQuery = { __typename?: 'Query', datenschutzPage: { __typename: 'DatenschutzPage', id: string, heroHeading?: string | null, heroSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections?: Array<{ __typename: 'DatenschutzPageSections', heading?: string | null, body?: string | null } | null> | null } };
+export type DatenschutzPageQuery = { datenschutzPage: { __typename: 'DatenschutzPage', id: string, heroHeading: string | null, heroSubtext: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections: Array<{ __typename: 'DatenschutzPageSections', heading: string | null, body: string | null } | null> | null } };
 
 export type DatenschutzPageConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<DatenschutzPageFilter>;
+  before?: string | null | undefined;
+  after?: string | null | undefined;
+  first?: number | null | undefined;
+  last?: number | null | undefined;
+  sort?: string | null | undefined;
+  filter?: DatenschutzPageFilter | null | undefined;
 }>;
 
 
-export type DatenschutzPageConnectionQuery = { __typename?: 'Query', datenschutzPageConnection: { __typename?: 'DatenschutzPageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'DatenschutzPageConnectionEdges', cursor: string, node?: { __typename: 'DatenschutzPage', id: string, heroHeading?: string | null, heroSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections?: Array<{ __typename: 'DatenschutzPageSections', heading?: string | null, body?: string | null } | null> | null } | null } | null> | null } };
+export type DatenschutzPageConnectionQuery = { datenschutzPageConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node: { __typename: 'DatenschutzPage', id: string, heroHeading: string | null, heroSubtext: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections: Array<{ __typename: 'DatenschutzPageSections', heading: string | null, body: string | null } | null> | null } | null } | null> | null } };
 
 export type ImpressumPageQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
+  relativePath: string;
 }>;
 
 
-export type ImpressumPageQuery = { __typename?: 'Query', impressumPage: { __typename: 'ImpressumPage', id: string, heroHeading?: string | null, heroSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections?: Array<{ __typename: 'ImpressumPageSections', heading?: string | null, body?: string | null } | null> | null } };
+export type ImpressumPageQuery = { impressumPage: { __typename: 'ImpressumPage', id: string, heroHeading: string | null, heroSubtext: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections: Array<{ __typename: 'ImpressumPageSections', heading: string | null, body: string | null } | null> | null } };
 
 export type ImpressumPageConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<ImpressumPageFilter>;
+  before?: string | null | undefined;
+  after?: string | null | undefined;
+  first?: number | null | undefined;
+  last?: number | null | undefined;
+  sort?: string | null | undefined;
+  filter?: ImpressumPageFilter | null | undefined;
 }>;
 
 
-export type ImpressumPageConnectionQuery = { __typename?: 'Query', impressumPageConnection: { __typename?: 'ImpressumPageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ImpressumPageConnectionEdges', cursor: string, node?: { __typename: 'ImpressumPage', id: string, heroHeading?: string | null, heroSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections?: Array<{ __typename: 'ImpressumPageSections', heading?: string | null, body?: string | null } | null> | null } | null } | null> | null } };
+export type ImpressumPageConnectionQuery = { impressumPageConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node: { __typename: 'ImpressumPage', id: string, heroHeading: string | null, heroSubtext: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections: Array<{ __typename: 'ImpressumPageSections', heading: string | null, body: string | null } | null> | null } | null } | null> | null } };
 
 export type StatutenPageQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
+  relativePath: string;
 }>;
 
 
-export type StatutenPageQuery = { __typename?: 'Query', statutenPage: { __typename: 'StatutenPage', id: string, heroHeading?: string | null, heroSubtext?: string | null, pdfUrl?: string | null, pdfButtonLabel?: string | null, footerNote?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections?: Array<{ __typename: 'StatutenPageSections', heading?: string | null, body?: string | null } | null> | null } };
+export type StatutenPageQuery = { statutenPage: { __typename: 'StatutenPage', id: string, heroHeading: string | null, heroSubtext: string | null, pdfUrl: string | null, pdfButtonLabel: string | null, footerNote: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections: Array<{ __typename: 'StatutenPageSections', heading: string | null, body: string | null } | null> | null } };
 
 export type StatutenPageConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<StatutenPageFilter>;
+  before?: string | null | undefined;
+  after?: string | null | undefined;
+  first?: number | null | undefined;
+  last?: number | null | undefined;
+  sort?: string | null | undefined;
+  filter?: StatutenPageFilter | null | undefined;
 }>;
 
 
-export type StatutenPageConnectionQuery = { __typename?: 'Query', statutenPageConnection: { __typename?: 'StatutenPageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'StatutenPageConnectionEdges', cursor: string, node?: { __typename: 'StatutenPage', id: string, heroHeading?: string | null, heroSubtext?: string | null, pdfUrl?: string | null, pdfButtonLabel?: string | null, footerNote?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections?: Array<{ __typename: 'StatutenPageSections', heading?: string | null, body?: string | null } | null> | null } | null } | null> | null } };
+export type StatutenPageConnectionQuery = { statutenPageConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node: { __typename: 'StatutenPage', id: string, heroHeading: string | null, heroSubtext: string | null, pdfUrl: string | null, pdfButtonLabel: string | null, footerNote: string | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections: Array<{ __typename: 'StatutenPageSections', heading: string | null, body: string | null } | null> | null } | null } | null> | null } };
 
 export type MembersDocQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
+  relativePath: string;
 }>;
 
 
-export type MembersDocQuery = { __typename?: 'Query', membersDoc: { __typename: 'MembersDoc', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, members?: Array<{ __typename: 'MembersDocMembers', name?: string | null, role?: string | null, location?: string | null, links?: Array<{ __typename: 'MembersDocMembersLinks', type?: string | null, url?: string | null } | null> | null } | null> | null } };
+export type MembersDocQuery = { membersDoc: { __typename: 'MembersDoc', id: string, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, members: Array<{ __typename: 'MembersDocMembers', name: string | null, role: string | null, location: string | null, links: Array<{ __typename: 'MembersDocMembersLinks', type: string | null, url: string | null } | null> | null } | null> | null } };
 
 export type MembersDocConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<MembersDocFilter>;
+  before?: string | null | undefined;
+  after?: string | null | undefined;
+  first?: number | null | undefined;
+  last?: number | null | undefined;
+  sort?: string | null | undefined;
+  filter?: MembersDocFilter | null | undefined;
 }>;
 
 
-export type MembersDocConnectionQuery = { __typename?: 'Query', membersDocConnection: { __typename?: 'MembersDocConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'MembersDocConnectionEdges', cursor: string, node?: { __typename: 'MembersDoc', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, members?: Array<{ __typename: 'MembersDocMembers', name?: string | null, role?: string | null, location?: string | null, links?: Array<{ __typename: 'MembersDocMembersLinks', type?: string | null, url?: string | null } | null> | null } | null> | null } | null } | null> | null } };
+export type MembersDocConnectionQuery = { membersDocConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node: { __typename: 'MembersDoc', id: string, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, members: Array<{ __typename: 'MembersDocMembers', name: string | null, role: string | null, location: string | null, links: Array<{ __typename: 'MembersDocMembersLinks', type: string | null, url: string | null } | null> | null } | null> | null } | null } | null> | null } };
 
 export const HomePagePartsFragmentDoc = gql`
     fragment HomePageParts on HomePage {
@@ -1789,7 +1908,7 @@ export const ExperimentalGetTinaClient = () =>
   getSdk(
     generateRequester(
       createClient({
-        url: "https://content.tinajs.io/2.3/content/0efbea30-f02f-4009-99ab-4244130bfa2a/github/main",
+        url: "http://localhost:4001/graphql",
         queries,
       })
     )
@@ -1801,5 +1920,7 @@ export const queries = (
   const requester = generateRequester(client)
   return getSdk(requester)
 }
+
+export type { Exact };
 
   
